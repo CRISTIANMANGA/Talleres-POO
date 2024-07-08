@@ -1,22 +1,25 @@
 class Persona {
-    constructor(nombre, edad, sexo) {
-        this.nombre = nombre;
-        this.edad = edad;
-        this.sexo = sexo;
+    constructor(nombre, edad) {
+      this.nombre = nombre;
+      this.edad = edad;
     }
-
+  
     saludar() {
-        return `¡Hola, soy ${this.nombre}!`;
+      console.log(`Hola, soy ${this.nombre}.`);
     }
-}
-
-document.getElementById('submitButton').addEventListener('click', function() {
-    const name = document.getElementById('name').value;
-    const age = document.getElementById('age').value;
-    const gender = document.getElementById('gender').value;
-
-    const persona1 = new Persona(name, age, gender);
-    
-    const messageElement = document.getElementById('message');
-    messageElement.textContent = persona1.saludar();
-});
+  }
+  
+  class Estudiante extends Persona {
+    constructor(nombre, edad, carrera) {
+      super(nombre, edad);
+      this.carrera = carrera;
+    }
+  
+    estudiar() {
+      console.log(`Estoy estudiando la carrera de ${this.carrera}.`);
+    }
+  }
+  
+  const estudiante1 = new Estudiante("Juan", 20, "Ingeniería Informática");
+  estudiante1.saludar();
+  estudiante1.estudiar();
