@@ -1,34 +1,138 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clases y objetos en JavaScript</title>
-    <style>
-        form {
-            margin-bottom: 10px;
-        }
-        input {
-            padding: 5px;
-            margin-right: 10px;
-        }
-        .result {
-            margin-top: 15px;
-        }
-    </style>
+    <title>Clases y Herencia</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <form id="formPersona">
-        <input type="text" id="nombre" placeholder="Nombre">
-        <input type="number" id="edad" placeholder="Edad">
-        <input type="text" id="sexo" placeholder="Sexo">
-        <input type="text" id="carrera" placeholder="Carrera">
-        <button type="submit">Crear Persona</button>
-    </form>
+    <div class="container">
+        <h1>Ejemplos de Clases y Herencia</h1>
+        
 
-    <div class="result" id="resultPersona"></div>
+        <div class="form-section">
+            <h2>Persona</h2>
+            <form id="personaForm">
+                <label for="nombrePersona">Nombre:</label>
+                <input type="text" id="nombrePersona">
+                <label for="edadPersona">Edad:</label>
+                <input type="number" id="edadPersona">
+                <label for="sexoPersona">Sexo:</label>
+                <input type="text" id="sexoPersona">
+                <button type="button" onclick="crearPersona()">Crear Persona</button>
+            </form>
+            <p id="saludoPersona"></p>
+        </div>
+        
+        <div class="form-section">
+            <h2>Estudiante</h2>
+            <form id="estudianteForm">
+                <label for="nombreEstudiante">Nombre:</label>
+                <input type="text" id="nombreEstudiante">
+                <label for="edadEstudiante">Edad:</label>
+                <input type="number" id="edadEstudiante">
+                <label for="sexoEstudiante">Sexo:</label>
+                <input type="text" id="sexoEstudiante">
+                <label for="carreraEstudiante">Carrera:</label>
+                <input type="text" id="carreraEstudiante">
+                <button type="button" onclick="crearEstudiante()">Crear Estudiante</button>
+            </form>
+            <p id="saludoEstudiante"></p>
+            <p id="mensajeEstudio"></p>
+        </div>
 
-<script src="script.js"></script>
+
+
+        <div class="form-section">
+            <h2>Figura, Círculo y Rectángulo</h2>
+            <form id="figuraForm">
+                <label for="colorFigura">Color:</label>
+                <input type="text" id="colorFigura">
+                <label for="areaFigura">Área:</label>
+                <input type="number" id="areaFigura">
+                <button type="button" onclick="crearFigura()">Crear Figura</button>
+            </form>
+            <p id="areaFiguraResult"></p>
+            
+            <form id="circuloForm">
+                <label for="colorCirculo">Color:</label>
+                <input type="text" id="colorCirculo">
+                <label for="radioCirculo">Radio:</label>
+                <input type="number" id="radioCirculo">
+                <button type="button" onclick="crearCirculo()">Crear Círculo</button>
+            </form>
+            <p id="areaCirculoResult"></p>
+
+            <form id="rectanguloForm">
+                <label for="colorRectangulo">Color:</label>
+                <input type="text" id="colorRectangulo">
+                <label for="largoRectangulo">Largo:</label>
+                <input type="number" id="largoRectangulo">
+                <label for="anchoRectangulo">Ancho:</label>
+                <input type="number" id="anchoRectangulo">
+                <button type="button" onclick="crearRectangulo()">Crear Rectángulo</button>
+            </form>
+            <p id="areaRectanguloResult"></p>
+        </div>
+        
+
+        <div class="form-section">
+            <h2>Vehículo y Coche</h2>
+            <form id="vehiculoForm">
+                <label for="marcaVehiculo">Marca:</label>
+                <input type="text" id="marcaVehiculo">
+                <label for="modeloVehiculo">Modelo:</label>
+                <input type="text" id="modeloVehiculo">
+                <label for="velocidadVehiculo">Velocidad:</label>
+                <input type="number" id="velocidadVehiculo">
+                <button type="button" onclick="crearVehiculo()">Crear Vehículo</button>
+            </form>
+            <p id="velocidadVehiculoResult"></p>
+            
+            <form id="cocheForm">
+                <label for="marcaCoche">Marca:</label>
+                <input type="text" id="marcaCoche">
+                <label for="modeloCoche">Modelo:</label>
+                <input type="text" id="modeloCoche">
+                <label for="velocidadCoche">Velocidad:</label>
+                <input type="number" id="velocidadCoche">
+                <label for="combustibleCoche">Combustible:</label>
+                <input type="text" id="combustibleCoche">
+                <button type="button" onclick="crearCoche()">Crear Coche</button>
+            </form>
+            <p id="velocidadCocheResult"></p>
+        </div>
+        
+
+        <div class="form-section">
+            <h2>Empleado y Gerente</h2>
+            <form id="empleadoForm">
+                <label for="nombreEmpleado">Nombre:</label>
+                <input type="text" id="nombreEmpleado">
+                <label for="edadEmpleado">Edad:</label>
+                <input type="number" id="edadEmpleado">
+                <label for="sueldoEmpleado">Sueldo:</label>
+                <input type="number" id="sueldoEmpleado">
+                <button type="button" onclick="crearEmpleado()">Crear Empleado</button>
+            </form>
+            <p id="salarioEmpleadoResult"></p>
+            
+            <form id="gerenteForm">
+                <label for="nombreGerente">Nombre:</label>
+                <input type="text" id="nombreGerente">
+                <label for="edadGerente">Edad:</label>
+                <input type="number" id="edadGerente">
+                <label for="sueldoGerente">Sueldo:</label>
+                <input type="number" id="sueldoGerente">
+                <label for="departamentoGerente">Departamento:</label>
+                <input type="text" id="departamentoGerente">
+                <button type="button" onclick="crearGerente()">Crear Gerente</button>
+            </form>
+            <p id="salarioGerenteResult"></p>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
 </body>
 </html>
